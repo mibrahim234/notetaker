@@ -1,18 +1,36 @@
 const express = require('express');
+const fs = require("fs");
+const path = require("path");
 const apiRoutes = require('./routes/apiRoutes');
 const htmlRoutes = require('./routes/htmlRoutes')
-// const uuid = require("uuidv4");
+// const { uuid } = require("uuidv4");
 
  // create port--- initialize app 
 const PORT = process.env.PORT || 3001;
 const app = express();
 
+const data = fs.readFileSync("db.json");
+const notes = JSON.parse(data);
+
 // Set up middleware 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static('public'));
-app.use('/api', apiRoutes);
-app.use('/', htmlRoutes);
+
+// get routes 
+app.get('/notes', (req, res) => {
+    res.sendFile(path.join(__dirname, '../public/notes.html'));
+  });
+
+  app.get("/api/notes", function (req, res) {
+    res.json(notes);
+});
+  
+  app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '../public/index.html'));
+  });
+
+  // post route
 
 // Starts server 
 app.listen(PORT, () => {
