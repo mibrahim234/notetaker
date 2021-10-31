@@ -1,16 +1,14 @@
 const express = require('express');
 const fs = require("fs");
 const path = require("path");
-const apiRoutes = require('./routes/apiRoutes');
-const htmlRoutes = require('./routes/htmlRoutes')
-// const { uuid } = require("uuidv4");
+// const  uuid  = require("uuidv8");
 
  // create port--- initialize app 
 const PORT = process.env.PORT || 3001;
 const app = express();
 
-const data = fs.readFileSync("db.json");
-const notes = JSON.parse(data);
+ // const data = fs.readFileSync("db.json");
+ // const notes = JSON.parse(data);
 
 // Set up middleware 
 app.use(express.urlencoded({ extended: true }));
@@ -30,7 +28,11 @@ app.get('/notes', (req, res) => {
     res.sendFile(path.join(__dirname, '../public/index.html'));
   });
 
-  // post route
+//   // post route
+//   app.post("/api/notes", function (req, res) {
+//         res.json();
+// });
+
 
 // Starts server 
 app.listen(PORT, () => {
