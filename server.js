@@ -1,4 +1,3 @@
-const { json } = require('express');
 const express = require('express');
 const fs = require("fs");
 const path = require("path");
@@ -26,27 +25,20 @@ app.get('/notes', (req, res) => {
   app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, './public/index.html'));
   });
+// returns indexhtml
 
   app.get("/api/notes", function (req, res) {
     res.json(notes);
 });
  // should return all saved notes as json
   
-  
-// returns indexhtml
-
-//   // post route
+// post route
  app.post("/api/notes", function (req, res) {
    req.body.id = uuidv4()
-   console.log(req.body)
    notes.push(req.body)
    fs.writeFileSync("./db/db.json", JSON.stringify(notes))
       res.json(notes);
  });
-// POST /api/notes should receive a new note to save on the request body
-//  add it to the db.json file, and then return the new note to the client. 
-// You'll need to find a way to give each note a unique id when it's saved
-// (look into npm packages that could do this for you).
 
 app.delete("/api/notes/:id", function (req,res) {
  notes = notes.filter(note => note.id != req.params.id )
