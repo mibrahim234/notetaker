@@ -1,5 +1,6 @@
 #  Note Taker ![GitHub license](https://img.shields.io/badge/license-MIT%20License-blue.svg)
 # Live Site 
+FIX UP SITE--DEPLOY SITE TO HEROKU 
 Heroku Site
 (need two existing notes )
 ## Your Task
