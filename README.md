@@ -1,8 +1,7 @@
 #  Note Taker ![GitHub license](https://img.shields.io/badge/license-MIT%20License-blue.svg)
 # Live Site 
-FIX UP SITE--DEPLOY SITE TO HEROKU 
-Heroku Site
-(need two existing notes )
+https://notetakertakingnotes.herokuapp.com/
+
 ## Your Task
 This application is called Note Taker. It can be used to write and save notes. This application uses an Express.js back end and will save and retrieve note data from a JSON file. This application has been deployed with Heroku. 
 
