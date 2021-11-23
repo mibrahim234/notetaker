@@ -2,7 +2,7 @@
 # Live Site 
 https://notetakertakingnotes.herokuapp.com/
 
-## Your Task
+## Description
 This application is called Note Taker. It can be used to write and save notes. This application uses an Express.js back end and will save and retrieve note data from a JSON file. This application has been deployed with Heroku. 
 
 ## Table of Contents
