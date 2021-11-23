@@ -17,7 +17,7 @@ To install this application go to https://github.com/mibrahim234/notetaker. Clon
 ## Usage 
  This application will be invoked by going to the deployed link and pressing 'get started' on the homepage.
  The user will then enter notes and it will be saved on the page. 
-  ![Notetaker Screenshot](Assets/note.PNG)
+  ![Notetaker Screenshot](Assets/note.png)
 
   
 ## License
